@@ -188,3 +188,5 @@ const letters = [...str, '', 'S.23'];
 console.log(letters);
 
 const ingredients = [prompt("Let's make a Pasta")];
+
+console.log('pasta');
