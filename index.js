@@ -111,6 +111,9 @@ const restaurant = {
     console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be 
     delivered to ${address} at ${time}`);
   },
+  orderPasta: function(ing1,ing2,ing3){
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3} `);
+  }
 };
 
 /*
@@ -187,6 +190,10 @@ const letters = [...str, '', 'S.23'];
 
 console.log(letters);
 
-let a;
+const ingredients = [prompt("Let's make a Pasta!! Ingredient1"),
+prompt('Ingedrient 2?'),
+prompt('Ingedrient 3?')];
 
-const ingredient = 'test';
+console.log(ingredients);
+
+restaurant.orderPasta(...ingredients);
