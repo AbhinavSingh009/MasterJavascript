@@ -113,6 +113,10 @@ const restaurant = {
   },
   orderPasta: function(ing1,ing2,ing3){
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3} `);
+  },
+  orerPizza: function(mainIngredient, ...otherIngredients){
+    console.log(mainIngredient);
+    console.log(otherIngredients);
   }
 };
 
@@ -170,7 +174,7 @@ console.log(o, c);
 */
 
 // Spread Operation
-
+/*
 const arr = [7, 8, 9];
 
 const newArr = [1, 2, ...arr];
@@ -190,10 +194,60 @@ const letters = [...str, '', 'S.23'];
 
 console.log(letters);
 
-const ingredients = [prompt("Let's make a Pasta!! Ingredient1"),
-prompt('Ingedrient 2?'),
-prompt('Ingedrient 3?')];
+// const ingredients = [prompt("Let's make a Pasta!! Ingredient1"),
+// prompt('Ingedrient 2?'),
+// prompt('Ingedrient 3?')];
 
-console.log(ingredients);
+// console.log(ingredients);
 
-restaurant.orderPasta(...ingredients);
+// restaurant.orderPasta(...ingredients);
+
+//Objects
+ const newRetaurant = {foundingYear:'1994', ...restaurant, founder:'Abhinav'}
+
+ console.log('The new one is ', newRetaurant);
+
+ // Copying Objects
+
+ const copyofRestaurant = {...restaurant}
+ copyofRestaurant.Name = 'Abhinav DDDD';
+*/
+
+// Rest Pattern
+// Pack Elements into an arrays 
+// Destructuring
+const arr  = [1,2,3,...[3,4]];
+
+// Rest becasue on the left side of the operator
+const [a,b,...others] = [1,2,3,4,5];
+
+console.log(a, b, others);
+
+const [pizza, ,resotto,...otherFood] =   [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+console.log(pizza,resotto,otherFood);
+
+const {sat, ...weekdays} = restaurant.openingHours;
+
+console.log(sat, weekdays);
+
+// Functions
+
+const add = function(...numbers){
+  let sum = 0;
+  for(let i of numbers){
+    sum += i;
+  }
+  console.log(sum);
+}
+
+add(2,3)
+add(5,3,4,4);
+
+const x1 = [23,5,7];
+
+add(...x1);
+
+restaurant.orerPizza('Tomato','Cheeze','Olives','Spinach');
+
+restaurant.orerPizza('Tomato');
