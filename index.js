@@ -186,3 +186,5 @@ const str = 'Abhinav';
 const letters = [...str, '', 'S.23'];
 
 console.log(letters);
+
+let a;
