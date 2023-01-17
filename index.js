@@ -188,3 +188,5 @@ const letters = [...str, '', 'S.23'];
 console.log(letters);
 
 let a;
+
+const ingredient = 'test';
