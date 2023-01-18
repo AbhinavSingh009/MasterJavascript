@@ -80,45 +80,48 @@ console.log('Live server is up');
 
 // Array Destruction
 
-const restaurant = {
-  Name: 'Classico Italiano',
-  location: 'Mississauga',
-  categories: ['Italian', 'Pizzaria', 'Vegeterian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Peas'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours: {
-    thur: {
-      open: 5,
-      close: 12,
-    },
-    fri: {
-      open: 5,
-      close: 2,
-    },
-    sat: {
-      open: 5,
-      close: 1,
-    },
-    sun: {
-      open: 1,
-      close: 9,
-    },
-  },
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
-    console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be 
-    delivered to ${address} at ${time}`);
-  },
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3} `);
-  },
-  orerPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
+// const openingHours= {
+//   thur: {
+//     open: 5,
+//     close: 12,
+//   },
+//   fri: {
+//     open: 5,
+//     close: 2,
+//   },
+//   sat: {
+//     open: 5,
+//     close: 1,
+//   },
+//   sun: {
+//     open: 1,
+//     close: 9,
+//   },
+// }
+
+// const restaurant = {
+//   Name: 'Classico Italiano',
+//   location: 'Mississauga',
+//   categories: ['Italian', 'Pizzaria', 'Vegeterian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Peas'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+//   // ES6 enhanced object literals
+//   openingHours,
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+//     console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be 
+//     delivered to ${address} at ${time}`);
+//   },
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3} `);
+//   },
+//   orerPizza: function (mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
 
 /*
 restaurant.orderDelivery({
@@ -341,3 +344,72 @@ const printGoals = function (...players) {
   console.log(`${players.length} goals were scored`);
 };
 */
+
+const openingHours= {
+  thur: {
+    open: 5,
+    close: 12,
+  },
+  fri: {
+    open: 5,
+    close: 2,
+  },
+  sat: {
+    open: 5,
+    close: 1,
+  },
+  sun: {
+    open: 1,
+    close: 9,
+  },
+}
+
+const restaurant = {
+  Name: 'Classico Italiano',
+  location: 'Mississauga',
+  categories: ['Italian', 'Pizzaria', 'Vegeterian', 'Organic'],
+  starterMenu: [{name:'Focaccia'}, {name:'Bruschetta'}, {name:'Garlic Bread'}, {name:'Peas'}],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  xyz:[1,2,3,4],
+  // ES6 enhanced object literals
+  openingHours,
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be 
+    delivered to ${address} at ${time}`);
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3} `);
+  },
+  orerPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+// New Ways of Looping
+const menu01 = [...restaurant.starterMenu, ...restaurant.mainMenu, ...restaurant.xyz];
+
+console.log(JSON.stringify(menu01));
+
+restaurant.starterMenu[0].name = 'Abhinav';
+restaurant.mainMenu[0] = 'Abhinav';
+restaurant.xyz[0] = 100;
+
+console.log(JSON.stringify(menu01));
+
+
+for(let [i,el] of menu01.entries()){
+  console.log(`${i+1}: ${el}`);
+}
+
+// Optional Chaining
+// With Nullish Coalisc
+
+console.log(restaurant.openingHours.Mon?.open ?? 'The property is not there');
+
+// For Methods
+
+console.log(restaurant.order3?.(0,1) ?? 'The Method does not exist');
