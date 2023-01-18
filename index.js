@@ -111,13 +111,13 @@ const restaurant = {
     console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be 
     delivered to ${address} at ${time}`);
   },
-  orderPasta: function(ing1,ing2,ing3){
+  orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3} `);
   },
-  orerPizza: function(mainIngredient, ...otherIngredients){
+  orerPizza: function (mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
-  }
+  },
 };
 
 /*
@@ -214,9 +214,9 @@ console.log(letters);
 */
 
 // Rest Pattern
-// Pack Elements into an arrays 
+// Pack Elements into an arrays
 // Destructuring
-const arr  = [1,2,3,...[3,4]];
+/*const arr  = [1,2,3,...[3,4]];
 
 // Rest becasue on the left side of the operator
 const [a,b,...others] = [1,2,3,4,5];
@@ -251,3 +251,93 @@ add(...x1);
 restaurant.orerPizza('Tomato','Cheeze','Olives','Spinach');
 
 restaurant.orerPizza('Tomato');
+
+// Another way of assigning value to the variable which is null/undefined or empty 
+// restaurant.anotherVarialble ||= 30;
+
+// nullish (null or unefined) assignment operator
+//restaurant.anotherVariable ??=10;
+*/
+
+//challange
+/*
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const [players1, players2] = game.players;
+
+console.log(players1, players2);
+
+const [goalKeeper, ...fieldPlayer] = players1;
+
+console.log(goalKeeper, fieldPlayer);
+
+const allPlayers = [...players1, ...players2];
+
+console.log(allPlayers);
+
+const players1Final = [...players1, 'Burki', 'Schulz', 'Hummels'];
+console.log(players1Final);
+
+const {
+  odds: { team1, x: Draw, team2 },
+} = game;
+
+console.log(team1, team2, Draw);
+
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored`);
+};
+*/
