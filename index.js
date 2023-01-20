@@ -443,3 +443,40 @@ rest.set(1, 'Italy');
 console.log(rest.set(2, 'Lisbon'));
 rest.get('name');
 
+const question = new Map([
+  ['Question', 'What is the best programming language'],
+  [1,'C'],
+  [2,'Java'],
+  [3,'JavaScript'],
+  ['correct',3],
+  [true,'correct'],
+  [false,'Try Again!!']
+]);
+
+console.log(question);
+
+// Convert Objects to Maps;
+
+const hrsmap = new Map(Object.entries(restaurant.openingHours));
+console.log(hrsmap);
+
+console.log(question.get('Question'));
+
+for(const [key,value] of question){
+  if(typeof key === 'number')
+    console.log(`Answer ${key}: ${value} `)
+}
+
+const answer = 3;//Number(prompt('Your Answer'));
+
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// Converting Map to an Array
+
+console.log([...question]);
+console.log('Entries',[...question.entries()]);
+console.log('Keys',[...question.keys()]);
+console.log('Values',[...question.values()]);
+
