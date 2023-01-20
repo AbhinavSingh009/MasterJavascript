@@ -111,7 +111,7 @@ console.log('Live server is up');
 //     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
 //   },
 //   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
-//     console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be 
+//     console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be
 //     delivered to ${address} at ${time}`);
 //   },
 //   orderPasta: function (ing1, ing2, ing3) {
@@ -345,7 +345,7 @@ const printGoals = function (...players) {
 };
 */
 
-const openingHours= {
+const openingHours = {
   thur: {
     open: 5,
     close: 12,
@@ -362,15 +362,20 @@ const openingHours= {
     open: 1,
     close: 9,
   },
-}
+};
 
 const restaurant = {
   Name: 'Classico Italiano',
   location: 'Mississauga',
   categories: ['Italian', 'Pizzaria', 'Vegeterian', 'Organic'],
-  starterMenu: [{name:'Focaccia'}, {name:'Bruschetta'}, {name:'Garlic Bread'}, {name:'Peas'}],
+  starterMenu: [
+    { name: 'Focaccia' },
+    { name: 'Bruschetta' },
+    { name: 'Garlic Bread' },
+    { name: 'Peas' },
+  ],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  xyz:[1,2,3,4],
+  xyz: [1, 2, 3, 4],
   // ES6 enhanced object literals
   openingHours,
   order: function (starterIndex, mainIndex) {
@@ -390,7 +395,11 @@ const restaurant = {
 };
 
 // New Ways of Looping
-const menu01 = [...restaurant.starterMenu, ...restaurant.mainMenu, ...restaurant.xyz];
+const menu01 = [
+  ...restaurant.starterMenu,
+  ...restaurant.mainMenu,
+  ...restaurant.xyz,
+];
 
 console.log(JSON.stringify(menu01));
 
@@ -400,9 +409,8 @@ restaurant.xyz[0] = 100;
 
 console.log(JSON.stringify(menu01));
 
-
-for(let [i,el] of menu01.entries()){
-  console.log(`${i+1}: ${el}`);
+for (let [i, el] of menu01.entries()) {
+  console.log(`${i + 1}: ${el}`);
 }
 
 // Optional Chaining
@@ -412,4 +420,26 @@ console.log(restaurant.openingHours.Mon?.open ?? 'The property is not there');
 
 // For Methods
 
-console.log(restaurant.order3?.(0,1) ?? 'The Method does not exist');
+console.log(restaurant.order3?.(0, 1) ?? 'The Method does not exist');
+
+//SETS
+// const orderSets = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Cheese',
+//   'Rissotto',
+//   'Alak',
+//   'Zukki',
+//   'Pizza',
+//   'Pasta',
+// ]);
+
+// console.log(orderSets);
+
+//MAPS
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Italy');
+console.log(rest.set(2, 'Lisbon'));
+rest.get('name');
+
