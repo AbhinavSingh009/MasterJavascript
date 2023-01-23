@@ -221,7 +221,7 @@ console.log(letters);
 // Destructuring
 /*const arr  = [1,2,3,...[3,4]];
 
-// Rest becasue on the left side of the operator
+// Rest because on the left side of the operator
 const [a,b,...others] = [1,2,3,4,5];
 
 console.log(a, b, others);
