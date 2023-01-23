@@ -45,3 +45,9 @@ const newPassport = function(person){
 newPassport(abhi);
 checkIn(flight,abhi);
 // Javascript does not have passing by reference, only passing by value
+
+// First Class functions: (first citizens, This means that functions are simply values), Functions are another type of Objects
+
+
+
+
