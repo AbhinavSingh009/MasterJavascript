@@ -71,3 +71,6 @@ transformer('Javascript is the Best ', oneWord);
 const greeterArr = greeting => name => console.log(`${greeting} ${name}`);
 
 greeterArr('Hi')('Abhinav');
+
+console.log('Checking something');
+
