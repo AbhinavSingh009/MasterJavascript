@@ -153,3 +153,4 @@
 // console.log(addVAT2(100));
 
 // Code Challange
+console.log('Testing Something');
