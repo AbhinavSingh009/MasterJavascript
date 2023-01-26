@@ -71,52 +71,85 @@
 // const greeterArr = greeting => name => console.log(`${greeting} ${name}`);
 //
 // greeterArr('Hi')('Abhinav');
+//
+// const lufthansa  = {
+//   airline: 'Lufthansa',
+//   iaiaCode: 'LH',
+//   bookings: [],
+//   book(flightNumber, passangerName) {
+//     console.log(`${passangerName} booked a seat on ${this.airline} flight ${this.iaiaCode}${flightNumber}`);
+//     this.bookings.push({flight:`${this.iaiaCode}${flightNumber}`, name:passangerName});
+//   }
+// };
+//
+// lufthansa.book(239,'Abhinav');
+// lufthansa.book(539,'Abhinav33');
+//
+// const eurowings = {
+//   airline:'Eurowings',
+//   iaiaCode: 'EW',
+//   bookings: []
+// }
+//
+// const swiss = {
+//   airline:'Swiss Arilines',
+//   iaiaCode: 'SW',
+//   bookings: []
+// }
+//
+// const book = lufthansa.book;
+//
+// //book(23,'Williams '); // This will throw error where this points to undefined
+// book.call(eurowings, 23, 'Williams'); // Here this keyword is set to eurowings object
+// console.log(eurowings);
+//
+// book.call(lufthansa,'289','Adam Smith');
+// console.log(lufthansa);
+//
+// book.apply(swiss, [549, 'Brad Pitt']); // Not used anymore in modern javascript
+// console.log(swiss);
+//
+// const flightData = [489,'Morgan Freeman'];
+// book.call(swiss, ...flightData);
+//
+// // The Bind Method (Manually allows you to set this keyword same like what call and apply does )
+//
+// const bookEW = book.bind(eurowings,234);
+// const bookLH = book.bind(lufthansa);
+// const bookSH = book.bind(swiss);
+//
+// bookEW(288,'Fred Stone');
+// bookEW('martha cooper');
+//
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function() {
+//   this.planes++;
+//
+//   console.log(this.planes);
+//
+//   console.log(this);
+// }
+//
+// document.querySelector('.buy').addEventListener('click',lufthansa.buyPlane.bind(lufthansa));
+//
+// // Partial Application
+// const addTax = (rate,value) => value + value*rate;
+//
+// console.log(addTax(0.1,200));
+//
+// const addVAT = addTax.bind(null, 0.23);
+// // addVAT = value => value + value * 0.23;
+//
+//
+// console.log(addVAT(100));
+//
+// const addTaxrate  = function(rate) {
+//   return function(value) {
+//     return value + value * rate;
+//   }
+// }
+//
+// const addVAT2 = addTaxrate(0.23);
+// console.log(addVAT2(100));
 
-const lufthansa  = {
-  airline: 'Lufthansa',
-  iaiaCode: 'LH',
-  bookings: [],
-  book(flightNumber, passangerName) {
-    console.log(`${passangerName} booked a seat on ${this.airline} flight ${this.iaiaCode}${flightNumber}`);
-    this.bookings.push({flight:`${this.iaiaCode}${flightNumber}`, name:passangerName});
-  }
-};
-
-lufthansa.book(239,'Abhinav');
-lufthansa.book(539,'Abhinav33');
-
-const eurowings = {
-  airline:'Eurowings',
-  iaiaCode: 'EW',
-  bookings: []
-}
-
-const swiss = {
-  airline:'Swiss Arilines',
-  iaiaCode: 'SW',
-  bookings: []
-}
-
-const book = lufthansa.book;
-
-//book(23,'Williams '); // This will throw error where this points to undefined
-book.call(eurowings, 23, 'Williams'); // Here this keyword is set to eurowings object
-console.log(eurowings);
-
-book.call(lufthansa,'289','Adam Smith');
-console.log(lufthansa);
-
-book.apply(swiss, [549, 'Brad Pitt']); // Not used anymore in modern javascript
-console.log(swiss);
-
-const flightData = [489,'Morgan Freeman'];
-book.call(swiss, ...flightData);
-
-// The Bind Method (Manually allows you to set this keyword same like what call and apply does )
-
-const bookEW = book.bind(eurowings,234);
-const bookLH = book.bind(lufthansa);
-const bookSH = book.bind(swiss);
-
-bookEW(288,'Fred Stone');
-bookEW('martha cooper');
+// Code Challange
