@@ -154,32 +154,108 @@
 
 // Code Challange
 
-const poll = {
-  question: 'What is your favourite programming language?',
-  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
-  // This generates [0, 0, 0, 0]. More in the next section 😃
-  answers: new Array(4).fill(0),
-  registerNewAnswer() {
-    // Get answer
-    const answer = Number(
-      prompt(
-        `${this.question}\n${this.options.join('\n')}\n(Write option number)`
-      )
-    );
-    console.log(answer);
-    // Register answer
-    typeof answer === 'number' &&
-      answer < this.answers.length &&
-      this.answers[answer]++;
-    this.displayResults();
-    this.displayResults('string');
-  },
-  displayResults(type = 'array') {
-    if (type === 'array') {
-      console.log(this.answers);
-    } else if (type === 'string') {
-      // Poll results are 13, 2, 4, 1
-      console.log(`Poll results are ${this.answers.join(', ')}`);
-    }
-  },
+// const poll = {
+//   question: 'What is your favourite programming language?',
+//   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+//   // This generates [0, 0, 0, 0]. More in the next section 😃
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer() {
+//     // Get answer
+//     const answer = Number(
+//       prompt(
+//         `${this.question} \n ${this.options.join('\n')}\n (Write option number)`
+//       )
+//     );
+//     console.log(answer);
+//     // Register answer
+//     typeof answer === 'number' &&
+//       answer < this.answers.length &&
+//       this.answers[answer]++; // Short circuit way if the two conditions are true then the array value will be incremented
+//     this.displayResults();
+//     this.displayResults('string');
+//   },
+//   displayResults(type = 'array') {
+//     if (type === 'array') {
+//       console.log(this.answers);
+//     } else if (type === 'string') {
+//       // Poll results are 13, 2, 4, 1
+//       console.log(`Poll results are ${this.answers.join(', ')}`);
+//     }
+//   },
+// };
+//
+// document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
+//
+// poll.displayResults.call({answers:[5,6,7]}); // instead of using the poll object we are passing our own, thats y we are using call
+
+// Immediately Invoked Function Expression (IIFE)
+
+// const runOnce = function () {
+//   console.log('This will never run again');
+// };
+//
+// runOnce();
+//
+// // IIFE
+// (function () {
+//   console.log('This will never runnn');
+// })();
+//
+// // IIFE with Arrow
+// (() => console.log('This will never runnn22'))();
+
+// Closures
+
+// const secureBooking = function () {
+//   let passangerCount = 0;
+//
+//   return function () {
+//     passangerCount++;
+//     console.log(`${passangerCount} passengers`);
+//   };
+// };
+//
+// const booker = secureBooking();
+//
+// // How can booker access passangerCount variable in secureBooking? The answer is Closure.
+// //CLOSURE:VE(variable environment) attached to the functionality, exactly as it was at the time and place the function was created.
+// booker();
+// booker();
+// booker();
+//
+// console.dir(booker);
+//
+// let f;
+//
+// const g = function () {
+//   const a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
+//
+// const h = function () {
+//   const b = 777;
+//   f = function () {
+//     console.log(b * 2);
+//   };
+// };
+//
+// g();
+// f();
+// // Re-assigned
+// h();
+// f();
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(() => {
+    console.log(`We are now boarding all  ${n} passengers`);
+    console.log(`There are three groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+  console.log(`Will start boarding in ${wait} seconds`);
 };
+
+const perGroup = 1000; // will not be used as perGroup is available in the EV
+boardPassengers(180, 3);
