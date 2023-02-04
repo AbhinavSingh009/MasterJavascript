@@ -247,15 +247,25 @@
 // h();
 // f();
 
-const boardPassengers = function (n, wait) {
-  const perGroup = n / 3;
+// const boardPassengers = function (n, wait) {
+//   const perGroup = n / 3;
+//
+//   setTimeout(() => {
+//     console.log(`We are now boarding all  ${n} passengers`);
+//     console.log(`There are three groups, each with ${perGroup} passengers`);
+//   }, wait * 1000);
+//   console.log(`Will start boarding in ${wait} seconds`);
+// };
+//
+// const perGroup = 1000; // will not be used as perGroup is available in the EV
+// boardPassengers(180, 3);
 
-  setTimeout(() => {
-    console.log(`We are now boarding all  ${n} passengers`);
-    console.log(`There are three groups, each with ${perGroup} passengers`);
-  }, wait * 1000);
-  console.log(`Will start boarding in ${wait} seconds`);
-};
+// Closure challange
 
-const perGroup = 1000; // will not be used as perGroup is available in the EV
-boardPassengers(180, 3);
+// (function () {
+//   const header = document.querySelector('h1');
+//   header.style.color = 'red';
+//   document.querySelector('body').addEventListener('click', function () {
+//     header.style.color = 'blue';
+//   });
+// })();
