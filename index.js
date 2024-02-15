@@ -117,7 +117,7 @@ console.log('Live server is up');
 //   orderPasta: function (ing1, ing2, ing3) {
 //     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3} `);
 //   },
-//   orerPizza: function (mainIngredient, ...otherIngredients) {
+//   orderPizza: function (mainIngredient, ...otherIngredients) {
 //     console.log(mainIngredient);
 //     console.log(otherIngredients);
 //   },
