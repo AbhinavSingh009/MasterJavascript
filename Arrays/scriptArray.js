@@ -47,22 +47,26 @@
 //   }
 // });
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-currencies.forEach((value, Key, map) => {
-  console.log(`${Key}: ${value}`);
-});
+// currencies.forEach((value, Key, map) => {
+//   console.log(`${Key}: ${value}`);
+// });
+//
+// const currenciesunique = new Set(['USD', 'GBP', 'INR', 'USD', 'EUR', 'EUR']);
+//
+// console.log(currenciesunique);
+//
+// // value_ the underscore after a variable name lets the developer know that it is a
+// // throwaway variable( completely unnecessary )
+// currenciesunique.forEach((val, val_, map) => {
+//   console.log(`${val_} : ${val}`);
+// });
 
-const currenciesunique = new Set(['USD', 'GBP', 'INR', 'USD', 'EUR', 'EUR']);
+const displayMovements = movements => {};
 
-console.log(currenciesunique);
-
-// value_ the underscore after a variable name lets the developer know that it is a
-// throwaway variable( completely unnecessary )
-currenciesunique.forEach((val, val_, map) => {
-  console.log(`${val_} : ${val}`);
-});
+displayMovements();
