@@ -110,7 +110,7 @@ console.log('Live server is up');
 //   order: function (starterIndex, mainIndex) {
 //     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
 //   },
-//   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+//   orderDelivery: function ({ starterIndex, mainIndex, time, address }) { // object descructuring happened here with the use of curly braces 
 //     console.log(`Order Received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be
 //     delivered to ${address} at ${time}`);
 //   },
@@ -167,7 +167,7 @@ const obj = { a: 7, b: 9, c: 12 };
 
 console.log(a, b);
 
-// Destructuring nested Ojects
+// Destructuring nested Ojects. Essentially we want access to open and close
 
 const {
   fri: { open: o, close: c },
